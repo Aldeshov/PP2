@@ -1,0 +1,7 @@
+C:\Users\Azat\source\repos\PP2\Week2\Task4\Task4\bin\Debug\Task4.exe.config
+C:\Users\Azat\source\repos\PP2\Week2\Task4\Task4\bin\Debug\Task4.exe
+C:\Users\Azat\source\repos\PP2\Week2\Task4\Task4\bin\Debug\Task4.pdb
+C:\Users\Azat\source\repos\PP2\Week2\Task4\Task4\obj\Debug\Task4.csprojAssemblyReference.cache
+C:\Users\Azat\source\repos\PP2\Week2\Task4\Task4\obj\Debug\Task4.csproj.CoreCompileInputs.cache
+C:\Users\Azat\source\repos\PP2\Week2\Task4\Task4\obj\Debug\Task4.exe
+C:\Users\Azat\source\repos\PP2\Week2\Task4\Task4\obj\Debug\Task4.pdb

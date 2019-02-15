@@ -145,7 +145,7 @@ namespace TaskFarManger
                     name = null;
 
                     // Here in Option Menu section "Open" availavles
-                    if ((fs.Name.EndsWith(".txt") || fs.Name.EndsWith(".md")) && CurrentIndex == count - X)
+                    if ((fs.Name.EndsWith(".txt") || fs.Name.EndsWith(".md")) && CurrentIndex == count - X && fs.GetType() != typeof(DirectoryInfo))
                         ShowOptions(true, fs);
                     else if (CurrentIndex == count - X)
                         ShowOptions(false, fs);
@@ -204,7 +204,7 @@ namespace TaskFarManger
                         File.Move(ForSelectItem.FullName, path + "/" + Rename + ForSelectItem.Extension);
 
                     if (Directory.Exists(ForSelectItem.FullName))
-                        Directory.Move(ForSelectItem.FullName, path + "/" + Rename + ForSelectItem.Extension);
+                        Directory.Move(ForSelectItem.FullName, path + "/" + Rename);
 
 
 
@@ -227,7 +227,6 @@ namespace TaskFarManger
             if (a == true)
             {
                 n = 0;
-                ForSelectItem = fs;
                 if (CurrentOptInd == 1)
                 {
                     
@@ -472,21 +471,26 @@ namespace TaskFarManger
                         DirName = directory.FullName;
 
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.SetCursorPosition(60, 26);
+                    Console.SetCursorPosition(60, 22);
                     Console.Write(DirName);
 
                     ToShow();
                     ShowDirectoriesFiles(path);
-
+                int nExc = 23;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.SetCursorPosition(60, 27);
+                    Console.SetCursorPosition(60, nExc);
                 if (ForException != null && ForException.Length > 57)
                 {
-                    string one = ForException.Remove(58);
-                    string two = ForException.Remove(0, 58);
-                    Console.Write(one);                            //Write Exception Message
-                    Console.SetCursorPosition(60, 28);
-                    Console.Write(two);
+                    for(int i = 0; i < (ForException.Length) / 57; i++)
+                    {
+                        string Exc = ForException.Substring(i * 57);
+                        Exc = Exc.Remove(57);                                 //Write Exception Message
+                        Console.Write(Exc);
+                        nExc++;
+                        
+                        Console.SetCursorPosition(60, nExc);
+                    }
+                    Console.Write(ForException.Remove(0,ForException.Length - ForException.Length % 57));
                 }
                 else
                     Console.Write(ForException);
@@ -505,7 +509,7 @@ namespace TaskFarManger
                                 if (directory.Parent != null)
                                 {
                                     CurrentIndex = 1;
-                                    directory = directory.Parent;    // if The Current Index is 1 (..) We take ParentDir of htis Directory
+                                    directory = directory.Parent;    // if The Current Index is 1 (..) We take ParentDir of this Directory
                                     path = directory.FullName;
                                 }
                             }

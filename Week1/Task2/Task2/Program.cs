@@ -4,21 +4,21 @@ namespace Ex7
 {
     class Student
     {
-        public string name;
-        public string id;
-        public int year;
+        public string name;//Name of Student
+        public string id; //ID of Student
+        public int year;  //Year of Student
 
         public Student(int year, string name, string id)
         {
-            this.name = name;
-            this.id = id;
-            this.year = year;
+            this.name = name; //Name of Student
+            this.id = id;    //ID of Student
+            this.year = year; //Year of Student
         }
 
      
         public override string ToString()
         {
-            return name + " " + id + " " + year;
+            return name + " " + id + " " + year;  // Write all Given
         }
 
     }
@@ -27,9 +27,9 @@ namespace Ex7
     {
         static void StudentInfo()
         {
-            string name = Convert.ToString(Console.ReadLine());
-            string id = Convert.ToString(Console.ReadLine());
-            int year = Convert.ToInt32(Console.ReadLine());
+            string name = Convert.ToString(Console.ReadLine()); // Read from User Name of Student
+            string id = Convert.ToString(Console.ReadLine()); // Read from User ID of Student
+            int year = Convert.ToInt32(Console.ReadLine());  // Read from User Year of Student
 
             Student s = new Student(year,name,id);
             Console.WriteLine(s.ToString());
@@ -37,7 +37,7 @@ namespace Ex7
         
         static void Main(string[] args)
         {
-            StudentInfo();
+            StudentInfo(); // Start the Program
         }
     }
 }
