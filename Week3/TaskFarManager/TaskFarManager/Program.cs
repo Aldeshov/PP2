@@ -162,6 +162,7 @@ namespace TaskFarManger
             Console.Clear();
             Console.CursorVisible = true; 
             ConsoleKeyInfo Keys = new ConsoleKeyInfo();
+            Console.SetBufferSize(120, 100);
             while (Keys.Key != ConsoleKey.Escape)
             {
                 Console.BackgroundColor = ConsoleColor.DarkBlue;
@@ -171,10 +172,12 @@ namespace TaskFarManger
                 Console.SetCursorPosition(0, 1);
 
                 Console.Write(text);
-
+                Console.Write(text.Length);
                 Keys = Console.ReadKey();
             }
+            Console.Clear();
                 inTextRedactor = false;
+            Console.SetBufferSize(120, 30);
         }
 
 
@@ -635,8 +638,7 @@ namespace TaskFarManger
         public static void Main()
         {
             FarManager UserOne = new FarManager();
-            UserOne.OpenDirectory("/users/Azat/Downloads/");
+            UserOne.OpenDirectory("/users/Azat");
         }
     }
 }
-   

@@ -4,3 +4,4 @@ C:\Users\Azat\source\repos\PP2\Week3\TaskFarManager\TaskFarManager\bin\Debug\Tas
 C:\Users\Azat\source\repos\PP2\Week3\TaskFarManager\TaskFarManager\obj\Debug\TaskFarManager.csproj.CoreCompileInputs.cache
 C:\Users\Azat\source\repos\PP2\Week3\TaskFarManager\TaskFarManager\obj\Debug\TaskFarManager.exe
 C:\Users\Azat\source\repos\PP2\Week3\TaskFarManager\TaskFarManager\obj\Debug\TaskFarManager.pdb
+C:\Users\Azat\source\repos\PP2\Week3\TaskFarManager\TaskFarManager\obj\Debug\TaskFarManager.csprojAssemblyReference.cache
