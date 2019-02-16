@@ -4,3 +4,4 @@ C:\Users\Azat\source\repos\PP2\Week1\Task3\Task3\bin\Debug\Task3.pdb
 C:\Users\Azat\source\repos\PP2\Week1\Task3\Task3\obj\Debug\Task3.csproj.CoreCompileInputs.cache
 C:\Users\Azat\source\repos\PP2\Week1\Task3\Task3\obj\Debug\Task3.exe
 C:\Users\Azat\source\repos\PP2\Week1\Task3\Task3\obj\Debug\Task3.pdb
+C:\Users\Azat\source\repos\PP2\Week1\Task3\Task3\obj\Debug\Task3.csprojAssemblyReference.cache
