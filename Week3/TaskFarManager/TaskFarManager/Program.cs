@@ -8,8 +8,7 @@ namespace TaskFarManger
 
         public static int CurrentIndex = 1; // Current Cursor Position in Directories and Files
         public static int CurrentOptInd = 0; // Current Cursor Position in Option Menu
-        public static string text = null; // Text to Read From File
-        public static int MenuStyle = 0; // Current Index Style 0 or 1 (integer)
+        public static int MenuStyle = 1; // Current Index Style 0 or 1 (integer)
         public string ForException = null; // Message of Exceptions
         public static FileSystemInfo ForSelectItem = null; // Current selected File or Directory
         public static int first = 2; // For Scrolling the Directories Starts from
@@ -45,7 +44,7 @@ namespace TaskFarManger
                     
                 }
             }
-            Console.Write("                                          Far Manager From Azat         v 1.0");
+            Console.Write("                                                      Far Manager          v 1.01");
             
         }
 
@@ -153,30 +152,36 @@ namespace TaskFarManger
                 count++;
             }
         }
+        
 
-
-                           ////////////////////////////////////-HowToShowTextRedactor-////////////////////////////////
+                           ////////////////////////////////////-HowToShowTextRedactor-////////////////////////////////                 <-   Not Finished !!!
                            
         public void OpenTextRedactor() // Here we can Only Open and Read the text files(".txt",".md")
         {
-            Console.Clear();
-            Console.CursorVisible = true; 
-            ConsoleKeyInfo Keys = new ConsoleKeyInfo();
-            Console.SetBufferSize(120, 100);
-            while (Keys.Key != ConsoleKey.Escape)
+            bool TextRedactor = true;
+            Console.CursorVisible = true;
+
+            while (TextRedactor == true)
             {
+                Console.Clear();
                 Console.BackgroundColor = ConsoleColor.DarkBlue;
                 Console.Clear();
                 Console.SetCursorPosition(0, 0);
                 Console.Write("--------------------------------------------------->> TextRedactor <<---------------------------------------------------");
-                Console.SetCursorPosition(0, 1);
-
-                Console.Write(text);
-                Console.Write(text.Length);
-                Keys = Console.ReadKey();
+                string text = File.ReadAllText(ForSelectItem.FullName);
+                Console.WriteLine(text);
+                ConsoleKeyInfo Keys = Console.ReadKey();
+                switch (Keys.Key)
+                {
+                    case ConsoleKey.Escape:
+                        TextRedactor = false;
+                        break;
+                    default:
+                        break;
+                }
             }
             Console.Clear();
-                inTextRedactor = false;
+            inTextRedactor = false;
             Console.SetBufferSize(120, 30);
         }
 
@@ -562,7 +567,6 @@ namespace TaskFarManger
                             if (CurrentOptInd == 1)  //This Option Takes Current Text file To Open
                             {
                                 inTextRedactor = true;
-                                text = System.IO.File.ReadAllText(ForSelectItem.FullName);
                             }
                             if(CurrentOptInd == 2)   //This Option Renames the Current File or Directory
                             {
@@ -638,7 +642,7 @@ namespace TaskFarManger
         public static void Main()
         {
             FarManager UserOne = new FarManager();
-            UserOne.OpenDirectory("/users/Azat");
+            UserOne.OpenDirectory("/users");
         }
     }
 }
